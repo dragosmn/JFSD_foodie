@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  mysql-service:
+    image: mysql:8.0
+    container_name: my_sql_container
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=foodiedb
+    ports:
+      - 3307:3306
+    restart: always
+  eureka-server:
+    build: ./backend/eureka-server/
+    container_name: eureka_container
+    ports:
+      - 8761:8761
+    restart: always
+  spring-boot-app:
+    build: ./backend/foodie/
+    container_name: spring_boot_container
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+    ports:
+      - 9090:9090
+    depends_on:
+      - mysql-service
+      - eureka-server
+    restart: always
+  react-service:
+    build: ./frontend/frontend-app/
+    container_name: react_container
+    ports:
+      - 80:80
+   

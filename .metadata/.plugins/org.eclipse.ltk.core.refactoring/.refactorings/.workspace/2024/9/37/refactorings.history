@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;backend-micro-service&apos; to &apos;login-micro-service&apos;" description="Rename resource &apos;backend-micro-service&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/backend-micro-service" name="login-micro-service" stamp="1725896498330" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;login-micro-service&apos;" deleteContents="false" description="Delete resource &apos;login-micro-service&apos;" element1="/login-micro-service" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1725900680761"/>
+</session>
